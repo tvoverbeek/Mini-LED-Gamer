@@ -1,4 +1,5 @@
 #include "HT16K33.h"
+#include "Menu.h"
 #include "Tetris.h"
 #include "Snake.h"
 #include "Paint.h"
@@ -24,7 +25,7 @@ Snake snake;
 Paint paint(3,3);  // initilize cursor position to (3,3)
 
 // Mode: 0-Undecided; 1-Tetris; 2-Snake; 3-Paint
-uint8_t mode=0;
+extern uint8_t mode;
 
 // Interrupt Variables
 uint8_t interruptCounter2Hz = 0;

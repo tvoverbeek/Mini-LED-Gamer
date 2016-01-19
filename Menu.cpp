@@ -1,3 +1,5 @@
+#include "Menu.h"
+
 const uint8_t tetrisBoot[16]={
   B00000000,
   B00000000,
@@ -57,6 +59,9 @@ const uint8_t paintBoot[16]={
 
 uint8_t option=1;
 
+// Mode: 0-Undecided; 1-Tetris; 2-Snake; 3-Paint
+uint8_t mode=0;
+
 void changeMode(){
   mode = option;
 }
@@ -75,6 +80,8 @@ uint8_t* getMenu(){
 
 void changeOption(int8_t i){
   int8_t temp = option+i;
-  if (temp<1 || temp>3) return;
+  if (temp<1) temp=3;
+  else if (temp>3) temp=1;
   option=temp;
 }
+
